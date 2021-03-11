@@ -1,0 +1,44 @@
+{
+  "name": "valorant-utils",
+  "version": "1.0.0",
+  "description": "This is lib for calculating the stats of Valorant",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "lint": "eslint ./src --ext .js --fix",
+    "test": "babel-node test/test.js"
+  },
+  "files": ["dist"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/theblitzapp/valorant-utils.git"
+  },
+  "keywords": [
+    "valorant",
+    "solomid"
+  ],
+  "author": "blitz team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/theblitzapp/valorant-utils/issues"
+  },
+  "homepage": "https://github.com/theblitzapp/valorant-utils#readme",
+  "dependencies": {
+    "lodash": "^4.17.15"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.10.3",
+    "@babel/core": "^7.10.3",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.10.3",
+    "eslint": "^7.3.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "husky": "^4.2.5"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn lint && yarn build && git add dist"
+    }
+  }
+}
